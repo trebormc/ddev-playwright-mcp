@@ -1,0 +1,25 @@
+name: ddev-playwright-mcp
+
+ddev_version_constraint: '>= v1.23.5'
+
+dependencies: []
+
+pre_install_actions:
+  - |
+    #ddev-description:Preparing Playwright MCP installation
+    echo "Installing ddev-playwright-mcp add-on..."
+
+project_files:
+  - docker-compose.playwright-mcp.yaml
+
+global_files: []
+
+post_install_actions:
+  - |
+    #ddev-description:Creating screenshots directory
+    mkdir -p screenshots 2>/dev/null || true
+
+removal_actions:
+  - |
+    #ddev-description:Cleaning up Playwright MCP
+    echo "Playwright MCP add-on removed."
