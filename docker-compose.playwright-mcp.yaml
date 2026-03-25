@@ -38,8 +38,17 @@ services:
       timeout: 5s
       retries: 3
       start_period: 10s
+    networks:
+      - default
+      - ddev_default
+
     x-ddev:
       describe-info: |
         Playwright MCP Server (headless Chromium)
         Internal URL: http://playwright-mcp:8931/mcp
         Screenshots: ./screenshots/
+
+networks:
+  ddev_default:
+    name: ddev_default
+    external: true
