@@ -57,14 +57,19 @@ ddev restart
 - The MCP server runs in **shared browser context** mode -- cookies and sessions persist across requests.
 - Screenshots output directory: `/tmp/playwright-output` (mapped to `./screenshots/` on host).
 
-## Related
+## Part of DDEV AI Workspace
 
-- [ddev-agents-sync](https://github.com/trebormc/ddev-agents-sync) -- Agents auto-sync from git
-- [ddev-beads](https://github.com/trebormc/ddev-beads) -- Beads task tracker for DDEV
-- [ddev-opencode](https://github.com/trebormc/ddev-opencode) -- OpenCode AI container for DDEV
-- [ddev-claude-code](https://github.com/trebormc/ddev-claude-code) -- Claude Code AI container for DDEV
-- [ddev-ralph](https://github.com/trebormc/ddev-ralph) -- Autonomous task runner for DDEV
-- [drupal-ai-agents](https://github.com/trebormc/drupal-ai-agents) -- 13 agents, 14 skills for Drupal development
+This add-on is part of [DDEV AI Workspace](https://github.com/trebormc/ddev-ai-workspace), a modular ecosystem of DDEV add-ons for AI-powered Drupal development.
+
+| Repository | Description | Relationship |
+|------------|-------------|--------------|
+| [ddev-ai-workspace](https://github.com/trebormc/ddev-ai-workspace) | Meta add-on that installs the full AI development stack with one command. | Workspace |
+| [ddev-opencode](https://github.com/trebormc/ddev-opencode) | [OpenCode](https://opencode.ai) AI CLI container for interactive development. | Auto-installs this add-on |
+| [ddev-claude-code](https://github.com/trebormc/ddev-claude-code) | [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI container for interactive development. | Auto-installs this add-on |
+| [ddev-ralph](https://github.com/trebormc/ddev-ralph) | Autonomous AI task orchestrator. Delegates work to OpenCode or Claude Code. | Auto-installs this add-on |
+| [ddev-beads](https://github.com/trebormc/ddev-beads) | [Beads](https://github.com/steveyegge/beads) git-backed task tracker shared by all AI containers. | Sibling dependency |
+| [ddev-agents-sync](https://github.com/trebormc/ddev-agents-sync) | Auto-syncs AI agent repositories into a shared Docker volume. | Sibling dependency |
+| [drupal-ai-agents](https://github.com/trebormc/drupal-ai-agents) | 13 agents, 4 rules, 14 skills for Drupal development. Includes Playwright browser testing skill. | Uses this for visual testing |
 
 ## Disclaimer
 
