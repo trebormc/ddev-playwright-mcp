@@ -59,6 +59,7 @@ ddev restart
 
 ## Related
 
+- [ddev-agents-sync](https://github.com/trebormc/ddev-agents-sync) -- Agents auto-sync from git
 - [ddev-beads](https://github.com/trebormc/ddev-beads) -- Beads task tracker for DDEV
 - [ddev-opencode](https://github.com/trebormc/ddev-opencode) -- OpenCode AI container for DDEV
 - [ddev-claude-code](https://github.com/trebormc/ddev-claude-code) -- Claude Code AI container for DDEV
