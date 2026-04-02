@@ -57,6 +57,13 @@ ddev restart
 - The MCP server runs in **shared browser context** mode -- cookies and sessions persist across requests.
 - Screenshots output directory: `/tmp/playwright-output` (mapped to `./screenshots/` on host).
 
+## Uninstallation
+
+```bash
+ddev add-on remove ddev-playwright-mcp
+ddev restart
+```
+
 ## Part of DDEV AI Workspace
 
 This add-on is part of [DDEV AI Workspace](https://github.com/trebormc/ddev-ai-workspace), a modular ecosystem of DDEV add-ons for AI-powered Drupal development.
