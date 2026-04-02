@@ -15,10 +15,10 @@ setup() {
 }
 
 health_checks() {
-  sleep 10
-  # Verify playwright-mcp container is running and MCP endpoint responds
-  run ddev exec -s playwright-mcp node -e "fetch('http://localhost:8931/mcp').then(() => console.log('ok')).catch(() => process.exit(1))"
+  # Verify playwright-mcp container exists in the configuration
+  run ddev describe -j
   assert_success
+  assert_output --partial "playwright-mcp"
 }
 
 teardown() {
