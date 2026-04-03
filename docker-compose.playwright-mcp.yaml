@@ -16,7 +16,7 @@ services:
     user: "${DDEV_UID:-1000}:${DDEV_GID:-1000}"
     volumes:
       - ../screenshots:/tmp/playwright-output
-    entrypoint: ["node", "cli.js"]
+    entrypoint: ["node", "/app/cli.js"]
     command:
       - --headless
       - --browser=chromium
