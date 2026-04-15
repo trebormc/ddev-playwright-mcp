@@ -15,7 +15,8 @@ services:
     init: true
     user: "${DDEV_UID:-1000}:${DDEV_GID:-1000}"
     volumes:
-      - ../screenshots:/tmp/playwright-output
+      - ../:/var/www/html
+      - ../screenshots:/var/www/html/screenshots
     entrypoint: ["node", "/app/cli.js"]
     command:
       - --headless
@@ -25,7 +26,7 @@ services:
       - --host=0.0.0.0
       - --allowed-hosts=*
       - --shared-browser-context
-      - --output-dir=/tmp/playwright-output
+      - --output-dir=/var/www/html/screenshots
     expose:
       - "8931"
     environment:
