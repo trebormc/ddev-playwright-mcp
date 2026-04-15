@@ -25,6 +25,7 @@ services:
       - --host=0.0.0.0
       - --allowed-hosts=*
       - --shared-browser-context
+      - --output-dir=/tmp/playwright-output
     expose:
       - "8931"
     environment:
