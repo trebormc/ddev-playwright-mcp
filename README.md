@@ -75,7 +75,7 @@ ddev restart
 
 - **Use HTTP** (not HTTPS) when navigating to your DDEV site from Playwright to avoid SSL certificate issues in local environments.
 - The MCP server runs in **shared browser context** mode. Cookies and sessions persist across requests.
-- Screenshots output directory: `/tmp/playwright-output` (mapped to `./screenshots/` on host).
+- Screenshots output directory: `/var/www/html/screenshots` (mapped to `./screenshots/` on host).
 
 ## Uninstallation
 
@@ -96,7 +96,7 @@ This add-on is part of [DDEV AI Workspace](https://github.com/trebormc/ddev-ai-w
 | [ddev-ralph](https://github.com/trebormc/ddev-ralph) | Autonomous AI task orchestrator. Delegates work to OpenCode or Claude Code. | Auto-installs this add-on |
 | [ddev-beads](https://github.com/trebormc/ddev-beads) | [Beads](https://github.com/steveyegge/beads) git-backed task tracker shared by all AI containers. | Sibling dependency |
 | [ddev-agents-sync](https://github.com/trebormc/ddev-agents-sync) | Auto-syncs AI agent repositories into a shared Docker volume. | Sibling dependency |
-| [drupal-ai-agents](https://github.com/trebormc/drupal-ai-agents) | 13 agents, 4 rules, 14 skills for Drupal development. Includes Playwright browser testing skill. | Uses this for visual testing |
+| [drupal-ai-agents](https://github.com/trebormc/drupal-ai-agents) | 10 agents, 12 rules, 24 skills for Drupal development. Includes Playwright browser testing skill. | Uses this for visual testing |
 
 ## Disclaimer
 
