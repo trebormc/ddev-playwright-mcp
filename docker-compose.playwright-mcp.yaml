@@ -34,6 +34,10 @@ services:
       - VIRTUAL_HOST=${DDEV_HOSTNAME}
       - TZ=${TZ:-UTC}
       - PLAYWRIGHT_MCP_ALLOW_ORIGINS=*
+      # The image's default user is "node" (UID 1000). When DDEV_UID differs,
+      # the UID has no /etc/passwd entry and HOME resolves to "/", so the MCP
+      # profile dir ($HOME/.cache/ms-playwright/...) fails with EACCES.
+      - HOME=/tmp
     healthcheck:
       test: ["CMD", "node", "-e", "fetch('http://localhost:8931/mcp').then(() => process.exit(0)).catch(() => process.exit(1))"]
       interval: 15s
