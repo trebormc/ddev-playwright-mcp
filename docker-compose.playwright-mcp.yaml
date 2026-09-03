@@ -20,6 +20,7 @@ services:
     entrypoint: ["node", "/app/cli.js"]
     command:
       - --headless
+      - --ignore-https-errors
       - --browser=chromium
       - --no-sandbox
       - --port=8931
