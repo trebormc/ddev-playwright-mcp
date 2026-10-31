@@ -15,8 +15,11 @@ services:
     init: true
     user: "${DDEV_UID:-1000}:${DDEV_GID:-1000}"
     volumes:
+      # The screenshots directory is ./screenshots inside this mount. Do NOT add
+      # a separate bind mount for it: when the host directory does not exist yet
+      # Docker creates the mount source as root:root, which later blocks moving
+      # or cleaning the project directory on the host.
       - ../:/var/www/html
-      - ../screenshots:/var/www/html/screenshots
     entrypoint: ["node", "/app/cli.js"]
     command:
       - --headless

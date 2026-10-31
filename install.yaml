@@ -17,7 +17,12 @@ global_files: []
 post_install_actions:
   - |
     #ddev-description:Creating screenshots directory
-    mkdir -p screenshots 2>/dev/null || true
+    # post_install_actions run inside .ddev/: the output directory lives in the
+    # project root. Creating it here, as the host user, means Docker never has
+    # to create it (which it would do as root).
+    mkdir -p ../screenshots
+    # Earlier releases created .ddev/screenshots by mistake; drop it when empty.
+    rmdir screenshots 2>/dev/null || true
 
 removal_actions:
   - |

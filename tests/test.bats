@@ -42,6 +42,11 @@ health_checks() {
   run ddev add-on list --installed
   assert_success
   assert_output --partial "ddev-playwright-mcp"
+  # The screenshots directory must exist in the PROJECT root, created by the
+  # install as the host user (never by Docker as root), and not inside .ddev/.
+  assert [ -d screenshots ]
+  assert [ -O screenshots ]
+  assert [ ! -d .ddev/screenshots ]
 }
 
 teardown() {
